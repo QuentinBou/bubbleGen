@@ -1,4 +1,5 @@
 body {
+  box-sizing: border-box;
   overflow: hidden;
   min-height: 100vh;
   margin: 0;
@@ -253,6 +254,39 @@ p {
   transition: 1.5s;
 }
 
+
+/* NIGHT MODE */
+.btn-slide{
+  margin: 0 1.25rem 1.25rem 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 1mm solid black;
+  border-radius: 8px;
+  width: 60px;
+  cursor: pointer;
+  display: flex;
+}
+.btn-sun{
+  padding: 0;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(253, 218, 18);
+  border-radius: 3px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  transition: .7s ease-in-out;
+}
+.btn-night{
+  background-color: black;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  visibility: hidden;
+  transition: .7s ease-in-out;
+}
 
 /* RESPONSIVE MOBILE */
 

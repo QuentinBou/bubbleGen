@@ -7,6 +7,9 @@ const cont = document.querySelector(".cont");
 const leg = document.querySelector(".legmsg");
 const menu = document.querySelector(".menu");
 const play = document.querySelector("#btn-play");
+const light = document.querySelector(".btn-slide");
+const btnSun = document.querySelector(".btn-sun");
+// const btnNight = document.querySelector('.btn-night')
 
 // AUDIO
 
@@ -27,7 +30,6 @@ const applause = () => {
   audio.src = "applause.mp3";
   audio.play();
 };
-
 
 // BUBLE GEN
 
@@ -322,17 +324,17 @@ const countPlay = () => {
         e.target.remove();
         score += 1;
         scoreShow.textContent = score;
-        if (score > 200) {
+        if (score > 400) {
           scoreShow.classList.add("legend");
           leg.style.display = "block";
           applause();
-        } else if (score > 100) {
+        } else if (score > 200) {
           scoreShow.style.color = "#FF33FC";
-        } else if (score > 75) {
+        } else if (score > 150) {
           scoreShow.style.color = "#33FFFF";
-        } else if (score > 50) {
+        } else if (score > 100) {
           scoreShow.style.color = "#64FF33";
-        } else if (score > 25) {
+        } else if (score > 50) {
           scoreShow.style.color = "#FFD433";
         }
       } else if (e.target.localName == "p") {
@@ -340,17 +342,17 @@ const countPlay = () => {
         e.target.remove();
         score += 10;
         scoreShow.textContent = score;
-        if (score > 200) {
+        if (score > 400) {
           scoreShow.classList.add("legend");
           leg.style.display = "block";
           applause();
-        } else if (score > 100) {
+        } else if (score > 200) {
           scoreShow.style.color = "#FF33FC";
-        } else if (score > 75) {
+        } else if (score > 150) {
           scoreShow.style.color = "#33FFFF";
-        } else if (score > 50) {
+        } else if (score > 100) {
           scoreShow.style.color = "#64FF33";
-        } else if (score > 25) {
+        } else if (score > 50) {
           scoreShow.style.color = "#FFD433";
         }
       }
@@ -358,6 +360,24 @@ const countPlay = () => {
   }, 12000);
 };
 
+// MODE NUIT / JOUR
+
+const day = () => {
+  btnSun.className = "btn-night";
+  btnSun.style.visibility = "visible";
+  btnSun.innerHTML = '<i class="fas fa-moon"></i>';
+  cont.style.backgroundColor = "black";
+  light.style.border = "1mm solid white";
+  menu.style.borderColor = "white";
+};
+
+const night = () => {
+  btnSun.className = "btn-sun";
+  btnSun.innerHTML = '<i class="fas fa-sun"></i>';
+  cont.style.backgroundColor = "white";
+  light.style.border = "1mm solid black";
+  menu.style.borderColor = "black";
+};
 
 // LISTENER
 
@@ -383,4 +403,12 @@ play.addEventListener("click", () => {
   menu.style.top = "-50%";
   menu.style.opacity = "0";
   setTimeout(countPlay, 2000);
+});
+
+light.addEventListener("click", () => {
+  if (btnSun.classList.contains("btn-sun")) {
+    day()
+  } else if (btnSun.classList.contains("btn-night")) {
+    night()
+  }
 });
