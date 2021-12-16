@@ -381,17 +381,6 @@ const night = () => {
 
 // LISTENER
 
-document.addEventListener("keyup", (e) => {
-  if (e.key == "g") {
-    bubbleBottom();
-    bubbleLeft();
-    bubbleRight();
-    bubbleTop();
-  } else {
-    console.log(e.key);
-  }
-});
-
 window.addEventListener("load", () => {
   menu.style.opacity = "1";
   if (screen.width > 900) {
