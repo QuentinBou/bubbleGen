@@ -376,11 +376,13 @@ const day = () => {
   btnSun.className = "btn-night";
   btnSun.style.visibility = "visible";
   btnSun.innerHTML = '<i class="fas fa-moon"></i>';
+  return 'style'
 };
 
 const night = () => {
   btnSun.className = "btn-sun";
   btnSun.innerHTML = '<i class="fas fa-sun"></i>';
+  return 'style-dark'
 };
 
 // LISTENER
@@ -405,7 +407,7 @@ light.addEventListener("click", () => {
   let link = styleLink.getAttribute('href')
   let params = link.split('.')[0]
 
-  let newParams = params == 'style' ? 'style-dark' : 'style'
+  let newParams = params == 'style' ? night() : day()
 
   styleLink.setAttribute('href', `${newParams}.css`)
 });
