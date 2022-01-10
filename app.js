@@ -25,11 +25,16 @@ const shootBonus = () => {
   audio.play();
 };
 
+let applauseOnce = false
 const applause = () => {
-  const audio = new Audio();
-  audio.src = "applause.mp3";
-  audio.play();
+  if (applauseOnce == false) {
+    const audio = new Audio();
+    audio.src = "applause.mp3";
+    audio.play();
+    applauseOnce = true
+  }
 };
+
 
 // BUBLE GEN
 
