@@ -16,12 +16,14 @@ const btnSun = document.querySelector(".btn-sun");
 const shoot = () => {
   const audio = new Audio();
   audio.src = "shoot.mp3";
+  audio.volume(0.5)
   audio.play();
 };
 
 const shootBonus = () => {
   const audio = new Audio();
   audio.src = "shootBonus.mp3";
+  audio.volume(0.3)
   audio.play();
 };
 
@@ -30,6 +32,7 @@ const applause = () => {
   if (applauseOnce == false) {
     const audio = new Audio();
     audio.src = "applause.mp3";
+    audio.volume(0.4)
     audio.play();
     applauseOnce = true
   }
