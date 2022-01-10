@@ -1,3 +1,29 @@
+:root {
+    --blue: #0c66ff;
+    --indigo: #6e00ff;
+    --purple: #510fa8;
+    --pink: #f074ad;
+    --red: #f25767;
+    --orange: #ffbe3d;
+    --yellow: #ffc431;
+    --green: #5cc9a7;
+    --teal: #50b5ff;
+    --cyan: #4bd6e5;
+    --white: #fff;
+    --gray: #c0ccda;
+    --gray-dark: #3c4858;
+    --primary: #0c66ff;
+    --secondary: #8492a6;
+    --success: #5cc9a7;
+    --info: #50b5ff;
+    --warning: #ffbe3d;
+    --danger: #f25767;
+    --light: #2a3d53;
+    --dark: #253649;
+    --neutral: #273444;
+    --white: #fff;
+}
+
 body {
   box-sizing: border-box;
   overflow: hidden;
@@ -248,7 +274,7 @@ p {
   font-family: cursive;
   color: rgb(177, 11, 11);
   position: absolute;
-  top: 5%;
+  top: 2%;
   text-shadow: #FC0 1px 0 10px;
   opacity: 0;
   transition: 1.5s;

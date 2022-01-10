@@ -34,6 +34,7 @@ const applause = () => {
 // BUBLE GEN
 
 const bubbleBottom = () => {
+
   setInterval(() => {
     let bubble = document.createElement("span");
     let second = Math.random() * 10 + 7 + "s";
@@ -58,8 +59,9 @@ const bubbleBottom = () => {
     document.body.appendChild(bubble);
     setInterval(() => {
       bubble.remove();
-    }, 15000);
-  }, 750);
+    }, 12000);
+  }, 900);
+
   setInterval(() => {
     let bubbleBonus = document.createElement("p");
     let second = Math.random() * 10 + 7 + "s";
@@ -85,7 +87,7 @@ const bubbleBottom = () => {
     document.body.appendChild(bubbleBonus);
     setInterval(() => {
       bubbleBonus.remove();
-    }, 18000);
+    }, 14000);
   }, 7500);
 };
 
@@ -115,8 +117,8 @@ const bubbleLeft = () => {
     document.body.appendChild(bubble);
     setInterval(() => {
       bubble.remove();
-    }, 15000);
-  }, 750);
+    }, 12000);
+  }, 900);
 
   setInterval(() => {
     let bubbleBonus = document.createElement("p");
@@ -173,8 +175,8 @@ const bubbleRight = () => {
     document.body.appendChild(bubble);
     setInterval(() => {
       bubble.remove();
-    }, 15000);
-  }, 750);
+    }, 12000);
+  }, 900);
 
   setInterval(() => {
     let bubbleBonus = document.createElement("p");
@@ -232,8 +234,8 @@ const bubbleTop = () => {
     document.body.appendChild(bubble);
     setInterval(() => {
       bubble.remove();
-    }, 15000);
-  }, 750);
+    }, 12000);
+  }, 900);
 
   setInterval(() => {
     let bubbleBonus = document.createElement("p");
@@ -366,17 +368,11 @@ const day = () => {
   btnSun.className = "btn-night";
   btnSun.style.visibility = "visible";
   btnSun.innerHTML = '<i class="fas fa-moon"></i>';
-  cont.style.backgroundColor = "black";
-  light.style.border = "1mm solid white";
-  menu.style.borderColor = "white";
 };
 
 const night = () => {
   btnSun.className = "btn-sun";
   btnSun.innerHTML = '<i class="fas fa-sun"></i>';
-  cont.style.backgroundColor = "white";
-  light.style.border = "1mm solid black";
-  menu.style.borderColor = "black";
 };
 
 // LISTENER
@@ -394,10 +390,14 @@ play.addEventListener("click", () => {
   setTimeout(countPlay, 2000);
 });
 
+
+const styleLink = document.querySelector('#stylesheet')
+
 light.addEventListener("click", () => {
-  if (btnSun.classList.contains("btn-sun")) {
-    day()
-  } else if (btnSun.classList.contains("btn-night")) {
-    night()
-  }
+  let link = styleLink.getAttribute('href')
+  let params = link.split('.')[0]
+
+  let newParams = params == 'style' ? 'style-dark' : 'style'
+
+  styleLink.setAttribute('href', `${newParams}.css`)
 });
